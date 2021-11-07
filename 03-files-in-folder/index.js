@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const readline = require('readline')
 
 fs.readdir(__dirname + '/secret-folder', (err, data) => {
   data.forEach((el) => {
