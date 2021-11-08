@@ -1,7 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const readline = require('readline')
-//проверка index html и удоление лишнего
 fs.readdir(__dirname + '/project-dist', (err, data) => {
   data.forEach((el) => {
     let checkForExtension = path.parse(__dirname + '/project-dist/' + el).ext
@@ -10,11 +8,7 @@ fs.readdir(__dirname + '/project-dist', (err, data) => {
     }
   })
 })
-// // создание bundle.css
-// fs.writeFile(__dirname + '/project-dist/bundle.css', '', (err) => {})
-// // собирающий массив пока
-// let arr = []
-//чтение папки с стилями
+
 fs.readdir(__dirname + '/styles', (err, data) => {
   data.forEach((el) => {
     let checkForExtension = path.parse(__dirname + '/styles/' + el).ext
@@ -27,10 +21,6 @@ fs.readdir(__dirname + '/styles', (err, data) => {
           (err, data) => {}
         )
       })
-      // fs.unlink(__dirname + '/project-dist/' + el, () => {})
-      // fs.watchFile()
     }
   })
 })
-// fs.rmdir(__dirname + '/files-copy', (err) => {})
-// fs.mkdir(__dirname + '/files-copy', (err) => {})
